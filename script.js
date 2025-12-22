@@ -19,19 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Embedded projects (from your JSON)
         const projects = [
-            { "title": "Table Extraction Tool", "description": "A Python script to automate extraction of tables from documents or websites.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Mini Runner Game", "description": "A simple 2D runner game built with Pygame.", "category": "Python", "link": "#", "image": "" },
+            { "title": "Phishing Site", "description": "A PHP-based fake login page that sends captured data to a Discord webhook.", "category": "PHP", "link": "#", "image": "" },
+            { "title": "Password Cracker", "description": "A Batch script that brute-forces passwords for ZIP files using a wordlist.", "category": "Batch", "link": "#", "image": "" },
             { "title": "Tetris Game", "description": "A classic Tetris game implemented using Tkinter.", "category": "Python", "link": "#", "image": "" },
-            { "title": "PNG Sprite Extractor", "description": "A tool to extract sprites from PNG files (work in progress).", "category": "Python", "link": "#", "image": "" },
+            { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
             { "title": "QR Code Generator", "description": "Generates QR codes from any input text or URL.", "category": "Python", "link": "#", "image": "" },
             { "title": "GIF Creator", "description": "Combines multiple images to create animated GIFs.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Dinosaur Game Cheat", "description": "An automation script that detects obstacles and auto-jumps in the Chrome dinosaur game.", "category": "Python", "link": "#", "image": "" },
+            { "title": "Client-Server Communtication", "description": "A local based server, with a local communtication between users.", "category": "Python", "link": "#", "image": "" },
             { "title": "Guess the Word Game", "description": "A word-guessing game with a fancy UI.", "category": "Python", "link": "#", "image": "" },
             { "title": "Discord Tag Bot", "description": "A bot to automate tagging friends on Discord.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
-            { "title": "Password Cracker", "description": "A Batch script that brute-forces passwords for ZIP files using a wordlist.", "category": "Batch", "link": "#", "image": "" },
-            { "title": "Phishing Attack Simulation", "description": "A PHP-based fake login page that sends captured data to a Discord webhook.", "category": "PHP", "link": "#", "image": "" }
-        ];
+            { "title": "Subdomain Enumerator", "description": "A python script that lists through a wordlist and finds existing subdomains on a website and saves them into a file.", "category": "Python", "link": "#", "image": "" },
+            { "title": "DNS enumerator", "description": "A python script tha finds record types for a website.", "category": "Python", "link": "#", "image": "" },
+            { "title": "Neon Chase", "description": "Python mini-game about a square being chased by a circle.", "category": "Python", "link": "#", "image": "" },
+             ];
 
         function createProjectHTML(project) {
             const img = project.image && project.image.trim() ? project.image : "https://via.placeholder.com/600x340?text=No+Image";
