@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { "title": "Guess the Word Game", "description": "A word-guessing game with a fancy UI.", "category": "Python", "link": "#", "image": "" },
             { "title": "Discord Tag Bot", "description": "A bot to automate tagging friends on Discord.", "category": "Python", "link": "#", "image": "" },
             { "title": "Subdomain Enumerator", "description": "A python script that lists through a wordlist and finds existing subdomains on a website and saves them into a file.", "category": "Python", "link": "https://github.com/B15cu1t/Subdomain_Enumerator", "image": "" },
-            { "title": "DNS enumerator", "description": "A python script tha finds record types for a website.", "category": "Python", "link": "#", "image": "" },
+            { "title": "DNS enumerator", "description": "A python script that finds record types for a website.", "category": "Python", "link": "https://github.com/B15cu1t/DNS_Enumerator", "image": "" },
             { "title": "Neon Chase", "description": "Python mini-game about a square being chased by a circle.", "category": "Python", "link": "#", "image": "" },
              ];
 
