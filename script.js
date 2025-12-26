@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Embedded projects (from your JSON)
         const projects = [
             { "title": "Phishing Site", "description": "A PHP-based fake login page that sends captured data to a Discord webhook.", "category": "PHP", "link": "https://github.com/B15cu1t/Phishing_Website/", "image": "" },
-            { "title": "Password Cracker", "description": "A Batch script that brute-forces passwords for ZIP files using a wordlist.", "category": "Batch", "link": "#", "image": "" },
+            { "title": "Password Cracker", "description": "A Batch script that brute-forces passwords for ZIP files using a wordlist.", "category": "Batch", "link": "https://github.com/B15cu1t/Password_Cracker", "image": "" },
             { "title": "Tetris Game", "description": "A classic Tetris game implemented using Tkinter.", "category": "Python", "link": "#", "image": "" },
             { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
             { "title": "QR Code Generator", "description": "Generates QR codes from any input text or URL.", "category": "Python", "link": "#", "image": "" },
