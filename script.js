@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const projects = [
             { "title": "Phishing Site", "description": "A PHP-based fake login page that sends captured data to a Discord webhook.", "category": "PHP", "link": "https://github.com/B15cu1t/Phishing_Website/", "image": "" },
             { "title": "Password Cracker", "description": "A Batch script that brute-forces passwords for ZIP files using a wordlist.", "category": "Batch", "link": "https://github.com/B15cu1t/Password_Cracker", "image": "" },
-            { "title": "Tetris Game", "description": "A classic Tetris game implemented using Tkinter.", "category": "Python", "link": "https://github.com/B15cu1t/Tetris_Game", "image": "" },
-            { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
-            { "title": "QR Code Generator", "description": "Generates QR codes from any input text or URL.", "category": "Python", "link": "#", "image": "" },
-            { "title": "GIF Creator", "description": "Combines multiple images to create animated GIFs.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Client-Server Communtication", "description": "A local based server, with a local communtication between users.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Guess the Word Game", "description": "A word-guessing game with a fancy UI.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Discord Tag Bot", "description": "A bot to automate tagging friends on Discord.", "category": "Python", "link": "#", "image": "" },
             { "title": "Subdomain Enumerator", "description": "A python script that lists through a wordlist and finds existing subdomains on a website and saves them into a file.", "category": "Python", "link": "https://github.com/B15cu1t/Subdomain_Enumerator", "image": "" },
             { "title": "DNS enumerator", "description": "A python script that finds record types for a website.", "category": "Python", "link": "https://github.com/B15cu1t/DNS_Enumerator", "image": "" },
+            { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
+            { "title": "Client-Server Communtication", "description": "A local based server, with a local communtication between users.", "category": "Python", "link": "https://github.com/B15cu1t/Client-Server-Communication", "image": "" },
+            { "title": "QR Code Generator", "description": "Generates QR codes from any input text or URL.", "category": "Python", "link": "#", "image": "" },
+            { "title": "GIF Creator", "description": "Combines multiple images to create animated GIFs.", "category": "Python", "link": "#", "image": "" }, 
+            { "title": "Guess the Word Game", "description": "A word-guessing game with a fancy UI.", "category": "Python", "link": "#", "image": "" },
+            { "title": "Discord Tag Bot", "description": "A bot to automate tagging friends on Discord.", "category": "Python", "link": "#", "image": "" },
+            { "title": "Tetris Game", "description": "A classic Tetris game implemented using Tkinter.", "category": "Python", "link": "https://github.com/B15cu1t/Tetris_Game", "image": "" },
             { "title": "Neon Chase", "description": "Python mini-game about a square being chased by a circle.", "category": "Python", "link": "#", "image": "" },
              ];
 
