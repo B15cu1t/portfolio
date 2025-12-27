@@ -1,7 +1,4 @@
-
-// Robust script: loads projects from an embedded array, handles filtering, animations, and avoids throwing fatal errors.
 document.addEventListener("DOMContentLoaded", function () {
-    // Remove no-js class so CSS fallback doesn't persist
     try { document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js'); } catch(e){}
 
     try {
@@ -24,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             { "title": "DNS enumerator", "description": "A python script that finds record types for a website.", "category": "Python", "link": "https://github.com/B15cu1t/DNS_Enumerator", "image": "" },
             { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
             { "title": "Client-Server Communtication", "description": "A local based server, with a local communtication between users.", "category": "Python", "link": "https://github.com/B15cu1t/Client-Server-Communication", "image": "" },
+            { "title": "Desktop File Organizer (Automation Script)", "description": "Automates desktop cleanup by detecting file types and sorting them into organized folders (Images, Videos, Music, Documents, Apps, Games).", "category": "Python", "link": "https://github.com/B15cu1t/Desktop-File-Organizer-Automation-Script-", "image": "" },
             { "title": "QR Code Generator", "description": "Generates QR codes from any input text or URL.", "category": "Python", "link": "#", "image": "" },
             { "title": "GIF Creator", "description": "Combines multiple images to create animated GIFs.", "category": "Python", "link": "#", "image": "" }, 
             { "title": "Guess the Word Game", "description": "A word-guessing game with a fancy UI.", "category": "Python", "link": "#", "image": "" },
@@ -58,33 +56,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
             filtered.forEach((project, i) => {
                 const col = document.createElement("div");
-                col.className = "col-12 col-md-4 d-flex"; // d-flex so cards stretch
+                col.className = "col-12 col-md-4 d-flex";
                 col.innerHTML = createProjectHTML(project);
                 projectContainer.appendChild(col);
 
-                // Add fade-in class slightly staggered
                 const card = col.querySelector(".project-card");
                 if (card) {
-                    // ensure starting state for animation
                     card.classList.add("fade-in");
-                    // Force reflow then let animation run (helps in some browsers)
                     void card.offsetWidth;
-                    // Slight stagger
                     setTimeout(() => {
-                        card.style.opacity = ""; // allow animation to control opacity
+                        card.style.opacity = "";
                     }, 50 + i * 80);
                 }
             });
         }
 
-        // Hide loading & fallback immediately (if present)
         if (loadingEl) loadingEl.style.display = "none";
         if (fallbackEl) fallbackEl.style.display = "none";
 
-        // Initial render
         displayProjects("all");
 
-        // Filter button handling (if exists)
         if (filterButtons.length) {
             filterButtons.forEach(btn => {
                 btn.addEventListener("click", function () {
@@ -92,19 +83,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     this.classList.add("active");
                     const filter = this.dataset.filter || "all";
                     displayProjects(filter);
-                    // ensure the projects section is visible on mobile after filtering
                     if (projectsSection) projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
                 });
             });
         }
 
-        // Reveal fade-in-section elements (staggered, but make sure they appear even if intersection observer fails)
         const fadeSections = Array.from(document.querySelectorAll(".fade-in-section"));
         fadeSections.forEach((el, idx) => {
             setTimeout(() => el.classList.add("visible"), 80 + idx * 80);
         });
 
-        // IntersectionObserver to lazily reveal sections as user scrolls (nice-to-have)
         if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
@@ -117,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
             fadeSections.forEach(s => observer.observe(s));
         }
 
-        // Theme toggle with persistence
         const themeToggle = document.getElementById("theme-toggle");
         try {
             const stored = localStorage.getItem("teo_theme");
@@ -133,10 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.warn("Theme persistence not available", e);
         }
 
-        // Init particles if available (safe-guarded)
         try {
             if (window.particlesJS && document.getElementById("particles-js")) {
-                // Minimal config so it doesn't block if lib partially loads
                 particlesJS("particles-js", {
                     "particles": {
                         "number": {"value": 40},
@@ -150,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.warn("Particles failed to initialize:", e);
         }
 
-        // Back-to-top
         const backToTop = document.getElementById("back-to-top");
         if (backToTop) {
             window.addEventListener("scroll", () => backToTop.classList.toggle("show", window.scrollY > 400));
