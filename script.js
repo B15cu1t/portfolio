@@ -1,152 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
-    try { document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js'); } catch(e){}
+    const projects = [
+        { title: "Subdomain Enumerator", desc: "A python script that lists through a wordlist and finds existing subdomains on a website.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/Subdomain_Enumerator" },
+        { title: "DNS enumerator", desc: "A python script that finds record types for a website.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/DNS_Enumerator" },
+        { title: "Client-Server Communication", desc: "A local based server, with a local communication between users.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/Client-Server-Communication" },
+        { title: "Desktop File Organizer", desc: "Automates desktop cleanup by detecting file types and sorting them.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/Desktop-File-Organizer-Automation-Script-" },
+        { title: "Phishing Site", desc: "A PHP-based fake login page that sends captured data to a Discord webhook.", tech: "PHP", type: "side", link: "https://github.com/B15cu1t/Phishing_Website/" },
+        { title: "Password Cracker", desc: "A Batch script that brute-forces passwords for ZIP files using a wordlist.", tech: "Batch", type: "side", link: "https://github.com/B15cu1t/Password_Cracker" },
+        { title: "Geo-Locator", desc: "A C# WinForms app that uses a public API to locate servers via DNS or IP.", tech: "C#", type: "side", link: "#" },
+        { title: "Tetris Game", desc: "A classic Tetris game implemented using Tkinter.", tech: "Python", type: "side", link: "https://github.com/B15cu1t/Tetris_Game" },
+        { title: "QR Code Generator", desc: "Generates QR codes from any input text or URL.", tech: "Python", type: "side", link: "#" },
+        { title: "GIF Creator", desc: "Combines multiple images to create animated GIFs.", tech: "Python", type: "side", link: "#" },
+        { title: "Guess the Word", desc: "A word-guessing game with a fancy UI.", tech: "Python", type: "side", link: "#" },
+        { title: "Discord Tag Bot", desc: "A bot to automate tagging friends on Discord.", tech: "Python", type: "side", link: "#" },
+        { title: "Neon Chase", desc: "Python mini-game about a square being chased by a circle.", tech: "Python", type: "side", link: "#" }
+    ];
 
-    try {
-        const projectContainer = document.getElementById("project-container");
-        const loadingEl = document.getElementById("project-loading");
-        const fallbackEl = document.getElementById("project-fallback");
-        const filterButtons = Array.from(document.querySelectorAll(".filter-buttons .btn"));
-        const projectsSection = document.getElementById("projects");
+    const mainRow = document.getElementById("main-projects-row");
+    const sideRow = document.getElementById("side-projects-row");
 
-        if (!projectContainer) {
-            console.error("Project container not found - aborting project load.");
-            if (fallbackEl) fallbackEl.style.display = "block";
-            return;
-        }
+    projects.forEach(p => {
+        const div = document.createElement("div");
+        const isMain = p.type === "main";
+        div.className = isMain ? "col-lg-6 col-12" : "col-lg-4 col-md-6 col-12";
+        div.innerHTML = `
+            <div class="module-card ${isMain ? 'featured-module' : 'side-module'}">
+                <div class="mb-3"><span class="tech-tag">${p.tech}</span></div>
+                <h3 class="h5 fw-bold mb-3">./${p.title}</h3>
+                <p class="text-dim small mb-4">${p.desc}</p>
+                <a href="${p.link}" target="_blank" class="text-accent text-decoration-none small fw-bold">EXECUTE_VIEW →</a>
+            </div>`;
+        if (isMain) mainRow.appendChild(div); else sideRow.appendChild(div);
+    });
 
-        const projects = [
-            { "title": "Phishing Site", "description": "A PHP-based fake login page that sends captured data to a Discord webhook.", "category": "PHP", "link": "https://github.com/B15cu1t/Phishing_Website/", "image": "" },
-            { "title": "Password Cracker", "description": "A Batch script that brute-forces passwords for ZIP files using a wordlist.", "category": "Batch", "link": "https://github.com/B15cu1t/Password_Cracker", "image": "" },
-            { "title": "Subdomain Enumerator", "description": "A python script that lists through a wordlist and finds existing subdomains on a website and saves them into a file.", "category": "Python", "link": "https://github.com/B15cu1t/Subdomain_Enumerator", "image": "" },
-            { "title": "DNS enumerator", "description": "A python script that finds record types for a website.", "category": "Python", "link": "https://github.com/B15cu1t/DNS_Enumerator", "image": "" },
-            { "title": "Geo-Locator", "description": "A C# WinForms app that uses a public API to locate servers via DNS or IP.", "category": "C#", "link": "#", "image": "" },
-            { "title": "Client-Server Communtication", "description": "A local based server, with a local communtication between users.", "category": "Python", "link": "https://github.com/B15cu1t/Client-Server-Communication", "image": "" },
-            { "title": "Desktop File Organizer (Automation Script)", "description": "Automates desktop cleanup by detecting file types and sorting them into organized folders (Images, Videos, Music, Documents, Apps, Games).", "category": "Python", "link": "https://github.com/B15cu1t/Desktop-File-Organizer-Automation-Script-", "image": "" },
-            { "title": "QR Code Generator", "description": "Generates QR codes from any input text or URL.", "category": "Python", "link": "#", "image": "" },
-            { "title": "GIF Creator", "description": "Combines multiple images to create animated GIFs.", "category": "Python", "link": "#", "image": "" }, 
-            { "title": "Guess the Word Game", "description": "A word-guessing game with a fancy UI.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Discord Tag Bot", "description": "A bot to automate tagging friends on Discord.", "category": "Python", "link": "#", "image": "" },
-            { "title": "Tetris Game", "description": "A classic Tetris game implemented using Tkinter.", "category": "Python", "link": "https://github.com/B15cu1t/Tetris_Game", "image": "" },
-            { "title": "Neon Chase", "description": "Python mini-game about a square being chased by a circle.", "category": "Python", "link": "#", "image": "" },
-             ];
+    const target = document.getElementById("glitch-name");
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+    let interval = null;
 
-        function createProjectHTML(project) {
-            const img = project.image && project.image.trim() ? project.image : "https://via.placeholder.com/600x340?text=No+Image";
-            return `
-                <div class="project-card card h-100">
-                    <img src="${img}" class="card-img-top" alt="${project.title}">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${project.title}</h5>
-                        <p class="card-text">${project.description}</p>
-                        <div class="mt-3">
-                            <a href="${project.link}" class="btn btn-accent">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function displayProjects(filter) {
-            projectContainer.innerHTML = "";
-            const filtered = filter === "all" ? projects : projects.filter(p => p.category === filter);
-            if (filtered.length === 0) {
-                projectContainer.innerHTML = `<div class="col-12 text-center text-light"><p>No projects found.</p></div>`;
-                return;
-            }
-
-            filtered.forEach((project, i) => {
-                const col = document.createElement("div");
-                col.className = "col-12 col-md-4 d-flex";
-                col.innerHTML = createProjectHTML(project);
-                projectContainer.appendChild(col);
-
-                const card = col.querySelector(".project-card");
-                if (card) {
-                    card.classList.add("fade-in");
-                    void card.offsetWidth;
-                    setTimeout(() => {
-                        card.style.opacity = "";
-                    }, 50 + i * 80);
-                }
-            });
-        }
-
-        if (loadingEl) loadingEl.style.display = "none";
-        if (fallbackEl) fallbackEl.style.display = "none";
-
-        displayProjects("all");
-
-        if (filterButtons.length) {
-            filterButtons.forEach(btn => {
-                btn.addEventListener("click", function () {
-                    filterButtons.forEach(b => b.classList.remove("active"));
-                    this.classList.add("active");
-                    const filter = this.dataset.filter || "all";
-                    displayProjects(filter);
-                    if (projectsSection) projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                });
-            });
-        }
-
-        const fadeSections = Array.from(document.querySelectorAll(".fade-in-section"));
-        fadeSections.forEach((el, idx) => {
-            setTimeout(() => el.classList.add("visible"), 80 + idx * 80);
-        });
-
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-            fadeSections.forEach(s => observer.observe(s));
-        }
-
-        const themeToggle = document.getElementById("theme-toggle");
-        try {
-            const stored = localStorage.getItem("teo_theme");
-            if (stored === "light") document.body.classList.add("light-mode");
-            if (themeToggle) {
-                themeToggle.addEventListener("click", () => {
-                    document.body.classList.toggle("light-mode");
-                    const isLight = document.body.classList.contains("light-mode");
-                    try { localStorage.setItem("teo_theme", isLight ? "light" : "dark"); } catch(e){}
-                });
-            }
-        } catch (e) {
-            console.warn("Theme persistence not available", e);
-        }
-
-        try {
-            if (window.particlesJS && document.getElementById("particles-js")) {
-                particlesJS("particles-js", {
-                    "particles": {
-                        "number": {"value": 40},
-                        "size": {"value": 3},
-                        "move": {"speed": 1},
-                        "line_linked": {"enable": true, "distance": 120, "opacity": 0.06}
-                    }
-                });
-            }
-        } catch (e) {
-            console.warn("Particles failed to initialize:", e);
-        }
-
-        const backToTop = document.getElementById("back-to-top");
-        if (backToTop) {
-            window.addEventListener("scroll", () => backToTop.classList.toggle("show", window.scrollY > 400));
-            backToTop.addEventListener("click", (ev) => {
-                ev.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-        }
-
-    } catch (err) {
-        console.error("Error in portfolio script:", err);
-        const fallback = document.getElementById("project-fallback");
-        if (fallback) fallback.style.display = "block";
+    function startGlitch() {
+        let iteration = 0;
+        clearInterval(interval);
+        interval = setInterval(() => {
+            target.innerText = target.innerText.split("").map((letter, index) => {
+                if(index < iteration) return target.dataset.value[index];
+                return letters[Math.floor(Math.random() * 42)]
+            }).join("");
+            if(iteration >= target.dataset.value.length) clearInterval(interval);
+            iteration += 1 / 3;
+        }, 30);
     }
+    startGlitch();
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        window.location.href = `mailto:teogjurevski097@gmail.com?subject=Inquiry&body=${encodeURIComponent(document.getElementById('message').value)}`;
+    });
+
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#a100f2" },
+            "opacity": { "value": 0.4 },
+            "size": { "value": 2 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#a100f2", "opacity": 0.2, "width": 1 },
+            "move": { "enable": true, "speed": 1.2 }
+        },
+        "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
+    });
 });
