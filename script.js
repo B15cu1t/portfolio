@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { title: "DNS enumerator", desc: "A python script that finds record types for a website.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/DNS_Enumerator" },
         { title: "Client-Server Communication", desc: "A local based server, with a local communication between users.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/Client-Server-Communication" },
         { title: "Desktop File Organizer", desc: "Automates desktop cleanup by detecting file types and sorting them.", tech: "Python", type: "main", link: "https://github.com/B15cu1t/Desktop-File-Organizer-Automation-Script-" },
-        { title: "Phishing Site", desc: "A PHP-based fake login page that sends captured data to a Discord webhook.", tech: "PHP", type: "side", link: "https://github.com/B15cu1t/Phishing_Website/" },
+        { title: "Phishing Site", desc: "An educational phishing simulation built to understand credential harvesting techniques and common attack flows.", tech: "PHP", type: "side", link: "https://github.com/B15cu1t/Phishing_Website/" },
         { title: "Password Cracker", desc: "A Batch script that brute-forces passwords for ZIP files using a wordlist.", tech: "Batch", type: "side", link: "https://github.com/B15cu1t/Password_Cracker" },
         { title: "Geo-Locator", desc: "A C# WinForms app that uses a public API to locate servers via DNS or IP.", tech: "C#", type: "side", link: "#" },
         { title: "Tetris Game", desc: "A classic Tetris game implemented using Tkinter.", tech: "Python", type: "side", link: "https://github.com/B15cu1t/Tetris_Game" },
