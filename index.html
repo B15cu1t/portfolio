@@ -1,131 +1,61 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>aa
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Portfolio of Teo Gjurevski, an aspiring cybersecurity expert from Macedonia, showcasing projects in Python, C#, Batch, and PHP.">
-    <meta name="keywords" content="cybersecurity, networking, Python, portfolio, Teo Gjurevski, Macedonia">
-    <meta name="author" content="Teo Gjurevski">
-    <title>Teo Gjurevski - Cybersecurity Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>B15cu1t // root@local.host</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="particles-js" class="particles" aria-hidden="true"></div>
+    <div id="particles-js"></div>
 
-    <header aria-label="Main navigation">
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Teo Gjurevski</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home" aria-label="Home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about" aria-label="About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects" aria-label="Projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact" aria-label="Contact">Contact</a></li>
-                        <li class="nav-item"><button id="theme-toggle" class="btn btn-outline-accent" aria-label="Toggle theme">Toggle Theme</button></li>
-                    </ul>
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color:var(--accent)">[root@teo_gjurevski:~]# _</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="directory-path mb-2" style="color:var(--accent)">./etc/init.d/profile</div>
+            <h1 class="display-2 fw-bold mb-4" id="glitch-name" data-value="Teo Gjurevski">Teo Gjurevski</h1>
+            <div class="bio-box">
+                <p class="fs-5 text-dim">
+                    First-year student at FINKI, Macedonia. Cybersecurity enthusiast with experience in robotics, networking, and programming. I work mostly in Python but enjoy experimenting across different stacks.
+                    <span class="cursor"></span>
+                </p>
+                <div class="mt-4">
+                    <a href="#projects" class="btn-cmd">MAN_PROJECTS</a>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero d-flex align-items-center">
-            <div class="container text-center">
-                <h1 class="typing-effect" data-text="Teo Gjurevski">Teo Gjurevski</h1>
-                <p class="lead fade-in">Aspiring Cybersecurity Expert from Macedonia</p>
-                <a href="#projects" class="btn btn-accent btn-lg fade-in" aria-label="Explore projects">Explore My Projects</a>
-            </div>
+    <div class="container pb-5">
+        <section id="projects" class="pt-5">
+            <h2 class="h6 fw-bold text-white mb-5">// .RUN_MAIN_PROJECTS</h2>
+            <div class="row g-4" id="main-projects-row"></div>
+            
+            <h2 class="h6 fw-bold text-secondary mt-5 mb-4">// .RUN_LAB_ARCHIVE</h2>
+            <div class="row g-4" id="side-projects-row"></div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-5 fade-in-section">
-            <div class="container">
-                <h2 class="text-center mb-5">About Me</h2>
-                <p class="text-center mx-auto" style="max-width: 700px;">I’m Teo Gjurevski, a cybersecurity enthusiast from Macedonia. I’m passionate about networking and ethical hacking, building projects in Python, C#, Batch, and PHP to master automation, game development, and security tools. My goal is to become a cybersecurity expert, safeguarding systems and exposing vulnerabilities.</p>
-                <div class="skills mt-5">
-                    <h3 class="text-center mb-4">Skills</h3>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <span class="badge bg-accent">Python</span>
-                        <span class="badge bg-accent">C#</span>
-                        <span class="badge bg-accent">Batch</span>
-                        <span class="badge bg-accent">PHP</span>
-                        <span class="badge bg-accent">Networking</span>
-                        <span class="badge bg-accent">Cybersecurity</span>
-                    </div>
+        <section id="contact" class="contact-terminal">
+            <h2 class="h6 fw-bold mb-4 text-accent">// .ESTABLISH_UPLINK</h2>
+            <form id="contact-form">
+                <div class="row">
+                    <div class="col-md-6"><input type="text" id="name" class="form-input" placeholder="SOURCE_ID" required></div>
+                    <div class="col-md-6"><input type="email" id="email" class="form-input" placeholder="REPLY_ADDR" required></div>
+                    <div class="col-12"><textarea id="message" class="form-input" rows="3" placeholder="TRANSMIT_DATA..." required></textarea></div>
+                    <div class="col-12 text-center mt-3"><button type="submit" class="btn-cmd">SEND_PACKET</button></div>
                 </div>
-            </div>
+            </form>
         </section>
+    </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-5 bg-secondary fade-in-section">
-            <div class="container">
-                <h2 class="text-center mb-5">My Projects</h2>
-                <div class="filter-buttons mb-4 text-center" role="toolbar" aria-label="Project filters">
-                    <button class="btn btn-outline-accent m-1 active" data-filter="all" aria-pressed="true">All</button>
-                    <button class="btn btn-outline-accent m-1" data-filter="Python">Python</button>
-                    <button class="btn btn-outline-accent m-1" data-filter="C#">C#</button>
-                    <button class="btn btn-outline-accent m-1" data-filter="Batch">Batch</button>
-                    <button class="btn btn-outline-accent m-1" data-filter="PHP">PHP</button>
-                </div>
-
-                <div class="row g-4 align-items-stretch" id="project-container" aria-live="polite">
-                    <div class="col-12 text-center text-light" id="project-loading" aria-hidden="false">
-                        <p>Loading projects...</p>
-                    </div>
-                    <div class="col-12 text-center text-light" id="project-fallback" style="display:none;">
-                        <p>Unable to load projects. Please try again later.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-5 fade-in-section">
-            <div class="container">
-                <h2 class="text-center mb-5">Contact Me</h2>
-                <form id="contact-form" class="mx-auto" style="max-width: 600px;" action="https://formspree.io/f/your-form-id" method="POST">
-                    <div class="mb-4">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required aria-required="true">
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required aria-required="true">
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required aria-required="true"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-accent w-100 mb-3">Send Message</button>
-                </form>
-                <div class="text-center">
-                    <a href="#" class="btn btn-outline-accent" download aria-label="Download resume">Download Resume</a>
-                </div>
-                <div class="social-links mt-5 text-center">
-                    <a href="#" class="mx-3" aria-label="GitHub profile">GitHub</a>
-                    <a href="#" class="mx-3" aria-label="LinkedIn profile">LinkedIn</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="py-4 text-center bg-dark">
-        <p>Crafted with <span class="heart">💜</span> in <span class="macedonia-flag">🇲🇰</span> Macedonia by Teo Gjurevski</p>
-    </footer>
-
-    <button id="back-to-top" class="btn btn-accent" aria-label="Back to top">↑</button>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
