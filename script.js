@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isMain) mainRow.appendChild(div); else sideRow.appendChild(div);
     });
 
+    // Watch Dogs Glitch
     const target = document.getElementById("glitch-name");
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
     let interval = null;
@@ -50,9 +51,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     startGlitch();
 
+    // Smart Contact Form Redirect
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        window.location.href = `mailto:teogjurevski097@gmail.com?subject=Inquiry&body=${encodeURIComponent(document.getElementById('message').value)}`;
+        
+        const name = document.getElementById('name').value;
+        const userEmail = document.getElementById('email').value.toLowerCase();
+        const msg = document.getElementById('message').value;
+        const myEmail = "teogjurevski097@gmail.com";
+
+        // Default to Gmail Web
+        let webmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=Inquiry_from_${name}&body=${encodeURIComponent(msg)}`;
+        
+        // Smart Redirect Logic
+        if (userEmail.includes("@yahoo")) {
+            webmailUrl = `https://compose.mail.yahoo.com/?to=${myEmail}&subject=Inquiry_from_${name}&body=${encodeURIComponent(msg)}`;
+        } else if (userEmail.includes("@outlook") || userEmail.includes("@hotmail") || userEmail.includes("@live")) {
+            webmailUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=${myEmail}&subject=Inquiry_from_${name}&body=${encodeURIComponent(msg)}`;
+        }
+
+        window.open(webmailUrl, '_blank');
+        
+        const btn = e.target.querySelector('button');
+        btn.innerText = "REDIRECTED_TO_WEBMAIL";
+        setTimeout(() => { btn.innerText = "SEND_PACKET"; }, 3000);
     });
 
     particlesJS("particles-js", {
