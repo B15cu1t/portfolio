@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isMain) mainRow.appendChild(div); else sideRow.appendChild(div);
     });
 
-    // Watch Dogs Glitch
     const target = document.getElementById("glitch-name");
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
     let interval = null;
@@ -51,10 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     startGlitch();
 
-    // Smart Contact Form Redirect (PC vs Mobile Logic)
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
-        
         const name = document.getElementById('name').value;
         const userEmail = document.getElementById('email').value.toLowerCase();
         const msg = document.getElementById('message').value;
@@ -62,16 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const subject = `Inquiry_from_${name}`;
         const body = encodeURIComponent(msg);
 
-        // Check for Mobile Devices
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
         if (isMobile) {
-            // Mobile: Use mailto protocol to trigger native Gmail/Mail app
             window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
         } else {
-            // PC: Open web-based composer based on user's email provider
             let webmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${myEmail}&su=${subject}&body=${body}`;
-            
             if (userEmail.includes("@yahoo")) {
                 webmailUrl = `https://compose.mail.yahoo.com/?to=${myEmail}&subject=${subject}&body=${body}`;
             } else if (userEmail.includes("@outlook") || userEmail.includes("@hotmail") || userEmail.includes("@live")) {
@@ -85,14 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => { btn.innerText = "SEND_PACKET"; }, 3000);
     });
 
-    // Botnet Background
     particlesJS("particles-js", {
         "particles": {
             "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#a100f2" },
+            "color": { "value": "#FF4F00" },
             "opacity": { "value": 0.4 },
             "size": { "value": 2 },
-            "line_linked": { "enable": true, "distance": 150, "color": "#a100f2", "opacity": 0.2, "width": 1 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#FF4F00", "opacity": 0.2, "width": 1 },
             "move": { "enable": true, "speed": 1.2 }
         },
         "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
