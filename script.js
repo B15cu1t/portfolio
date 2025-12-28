@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { title: "Guess the Word", desc: "A word-guessing game with a fancy UI.", tech: "Python", type: "side", link: "#" },
         { title: "Discord Tag Bot", desc: "A bot to automate tagging friends on Discord.", tech: "Python", type: "side", link: "#" },
         { title: "Neon Chase", desc: "Python mini-game about a square being chased by a circle.", tech: "Python", type: "side", link: "#" }
+        
     ];
 
     const mainRow = document.getElementById("main-projects-row");
