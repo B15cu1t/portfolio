@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isMain) mainRow.appendChild(div); else sideRow.appendChild(div);
     });
 
-    // Custom Cursor
     const cursor = document.querySelector('.custom-cursor');
     const dot = document.querySelector('.cursor-dot');
     window.addEventListener('mousemove', (e) => {
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     refreshCursor();
 
-    // Glitch Effect
     const target = document.getElementById("glitch-name");
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
     let interval = null;
@@ -71,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     startGlitch();
 
-    // FORMSPREE EMAIL LOGIC (PC & Mobile Friendly)
     const contactForm = document.getElementById('contact-form');
     const submitBtn = contactForm.querySelector('button');
 
@@ -82,9 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const formData = new FormData(this);
         
-        // 1. Try Formspree (Background Send)
         try {
-            // REPLACE 'YOUR_FORMSPREE_ID' BELOW WITH YOUR ACTUAL ID (e.g. 'xvqrlqbw')
             const response = await fetch("https://formspree.io/f/mkogqrrz", {
                 method: "POST",
                 body: formData,
@@ -93,19 +88,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 submitBtn.innerText = "TRANSMISSION_SUCCESS";
-                submitBtn.style.background = "#00ff41"; // Success Green
+                submitBtn.style.background = "#00ff41";
                 submitBtn.style.color = "black";
                 contactForm.reset();
             } else {
                 throw new Error("Formspree Error");
             }
         } catch (error) {
-            // 2. Fallback if Formspree fails (or ID is missing)
             submitBtn.innerText = "UPLINK_FAILED";
             setTimeout(() => {
                 submitBtn.innerText = "RETRYING_VIA_APP...";
                 
-                // Fallback to mailto logic
                 const name = document.getElementById('name').value;
                 const msg = document.getElementById('message').value;
                 const myEmail = "teogjurevski097@gmail.com";
