@@ -9,60 +9,87 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="screen-vignette"></div>
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
     <div id="particles-js"></div>
 
     <nav class="navbar navbar-dark fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand fw-bold" href="#" style="color:var(--accent)">[root@B15cu1t:~]# _</a>
-            <div class="system-status d-none d-md-flex align-items-center">
-                <span class="pulse-dot"></span>
-                <span class="status-text">UPLINK: <span class="text-white">ACTIVE_NODE</span></span>
+            <a class="navbar-brand fw-bold" href="#">[root@B15cu1t:~]# _</a>
+            <div class="d-flex align-items-center">
+                <div class="system-status d-none d-md-flex align-items-center me-4">
+                    <span class="pulse-dot"></span>
+                    <span class="status-text">UPLINK: <span class="text-white">ACTIVE_NODE</span></span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/B15cu1t" target="_blank" class="social-link">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/teo-gjurevski-1a2b3c4d/" target="_blank" class="social-link ms-3">LINKEDIN</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="container">
-            <div class="directory-path mb-2" style="color:var(--accent)">./etc/init.d/profile</div>
-            <h1 class="display-2 fw-bold mb-4" id="glitch-name" data-value="Teo Gjurevski">Teo Gjurevski</h1>
-            <div class="bio-box">
-                <p class="fs-5 text-dim">
-                    First-year student at FINKI, Macedonia. Cybersecurity enthusiast with experience in robotics, networking, and programming. I work mostly in Python but enjoy experimenting across different stacks.
-                    <span class="cursor"></span>
-                </p>
-                <div class="mt-4">
-                    <a href="#projects" class="btn-cmd text-decoration-none">MAIN_PROJECTS</a>
+        <div class="container text-center">
+            <div class="directory-path mb-2" data-aos="fade-down">./etc/init.d/profile</div>
+            <h1 class="display-2 fw-bold mb-3" id="glitch-name" data-value="Teo Gjurevski" data-aos="zoom-in">Teo Gjurevski</h1>
+            <p class="tagline mb-5" data-aos="fade-up" data-aos-delay="200">Cybersecurity Enthusiast • Python Developer • Network Explorer</p>
+            
+            <div class="bio-container" data-aos="fade-up" data-aos-delay="400">
+                <div class="bio-box">
+                    <p class="bio-text">
+                        First-year student at FINKI, Macedonia. Cybersecurity enthusiast with experience in robotics, networking, and programming. I work mostly in Python but enjoy experimenting across different stacks.
+                        <span class="cursor-line"></span>
+                    </p>
                 </div>
+                <div class="mt-5">
+                    <a href="#projects" class="btn-cmd text-decoration-none">MAN_PROJECTS</a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span>SCROLL_DOWN</span>
+                <div class="arrow"></div>
             </div>
         </div>
     </header>
 
-    <div class="container pb-5">
-        <section id="projects" class="pt-5">
-            <h2 class="h6 fw-bold text-white mb-5">// .RUN_MAIN_PROJECTS</h2>
-            <div class="row g-4" id="main-projects-row"></div>
+    <main class="container pb-5">
+        <section id="projects" class="py-5">
+            <h2 class="h6 fw-bold text-white mb-5" style="letter-spacing: 2px;">// .RUN_MAIN_PROJECTS</h2>
+            <div class="row g-4 mb-5" id="main-projects-row"></div>
             
-            <h2 class="h6 fw-bold text-secondary mt-5 mb-4">// .RUN_LAB_ARCHIVE</h2>
+            <h2 class="h6 fw-bold text-secondary mt-5 mb-5" style="letter-spacing: 2px;">// .RUN_LAB_ARCHIVE</h2>
             <div class="row g-4" id="side-projects-row"></div>
         </section>
 
-        <section id="contact" class="contact-terminal">
-            <h2 class="h6 fw-bold mb-4 text-accent">// .ESTABLISH_UPLINK</h2>
+        <section id="contact" class="contact-terminal" data-aos="fade-up">
+            <h2 class="h6 fw-bold mb-5 text-accent">// .ESTABLISH_UPLINK</h2>
             <form id="contact-form">
-                <div class="row">
+                <div class="row g-4">
                     <div class="col-md-6"><input type="text" name="name" id="name" class="form-input" placeholder="SOURCE_ID" required></div>
                     <div class="col-md-6"><input type="email" name="email" id="email" class="form-input" placeholder="REPLY_ADDR" required></div>
-                    <div class="col-12"><textarea name="message" id="message" class="form-input" rows="3" placeholder="TRANSMIT_DATA..." required></textarea></div>
-                    <div class="col-12 text-center mt-3"><button type="submit" class="btn-cmd">SEND_PACKET</button></div>
+                    <div class="col-12"><textarea name="message" id="message" class="form-input" rows="4" placeholder="TRANSMIT_DATA..." required></textarea></div>
+                    <div class="col-12 text-center mt-4"><button type="submit" class="btn-cmd">SEND_PACKET</button></div>
                 </div>
             </form>
         </section>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container text-center">
+            <p class="mb-2">© 2024 B15cu1t Security Systems</p>
+            <p class="small text-muted">Authored in Skopje, MKD // <a href="#" class="footer-link">Back_to_Root</a></p>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
