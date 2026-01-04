@@ -214,8 +214,8 @@ Type 'ls projects' to view all`,
    Event: Balkan Hacking CTF - Kosovo`,
         
         hack: `<span class="text-accent">ACCESS DENIED</span>
-Nice try! But this terminal is read-only 😉
-Try the Konami code instead... (↑↑↓↓←→←→BA)`,
+Nice try! But this terminal is read-only
+Try the Konami code instead...,
         
         sudo: `<span class="text-accent">[sudo]</span> password for visitor: 
 Sorry, you don't have sudo privileges here!`,
@@ -259,7 +259,6 @@ Type <span class="text-accent">help</span> for available commands`;
             terminalInput.value = '';
         }
     });
-//aaaaa
     // Konami Code Easter Egg
     let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
