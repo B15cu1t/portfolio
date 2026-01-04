@@ -259,7 +259,7 @@ Type <span class="text-accent">help</span> for available commands`;
             terminalInput.value = '';
         }
     });
-
+//aaaaa
     // Konami Code Easter Egg
     let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
     let konamiIndex = 0;
