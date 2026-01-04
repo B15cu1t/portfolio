@@ -205,7 +205,7 @@ Type 'ls projects' to view all`,
         
         contact: `<span class="text-accent">CONTACT CHANNELS:</span>
 → GitHub: https://github.com/B15cu1t
-→ LinkedIn: https://www.linkedin.com/in/teo-gjurevski-1a2b3c4d/
+→ LinkedIn: https://www.linkedin.com/in/teo-gjurevski-865a273a2/
 → Email: Available via contact form below`,
         
         cert: `<span class="text-accent">CERTIFICATIONS:</span>
