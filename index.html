@@ -13,10 +13,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Boot Sequence Overlay -->
+    <div class="boot-overlay" id="boot-overlay">
+        <div class="boot-content">
+            <div class="boot-line">&gt; INITIALIZING B15CU1T_SYSTEMS...</div>
+            <div class="boot-line">&gt; LOADING SECURITY_MODULES... <span class="boot-progress">[<span id="boot-bar"></span>]</span> <span id="boot-percent">0%</span></div>
+            <div class="boot-line">&gt; ESTABLISHING SECURE_CONNECTION...</div>
+            <div class="boot-line boot-success">&gt; SYSTEM_READY // WELCOME_USER</div>
+        </div>
+    </div>
+
     <div class="screen-vignette"></div>
     <div class="custom-cursor"></div>
     <div class="cursor-dot"></div>
     <div id="particles-js"></div>
+
+    <!-- Easter Egg Message -->
+    <div class="easter-egg-popup" id="easter-egg">
+        <div class="easter-egg-content">
+            <div class="mb-3">🎉 KONAMI CODE DETECTED 🎉</div>
+            <div class="text-accent mb-2">ACCESS_GRANTED</div>
+            <div class="small">You found the secret! Check the console for a surprise...</div>
+        </div>
+    </div>
 
     <nav class="navbar navbar-dark fixed-top">
         <div class="container d-flex justify-content-between align-items-center">
@@ -36,19 +55,52 @@
 
     <header class="hero">
         <div class="container text-center">
-            <div class="directory-path mb-2" data-aos="fade-down">./etc/init.d/profile</div>
-            <h1 class="display-2 fw-bold mb-3" id="glitch-name" data-value="Teo Gjurevski" data-aos="zoom-in">Teo Gjurevski</h1>
+            <div class="directory-path mb-4" data-aos="fade-down">./etc/init.d/profile</div>
+            <h1 class="display-2 fw-bold mb-4" id="glitch-name" data-value="Teo Gjurevski" data-aos="zoom-in">Teo Gjurevski</h1>
             <p class="tagline mb-5" data-aos="fade-up" data-aos-delay="200">Cybersecurity Enthusiast • Python Developer • Network Explorer</p>
             
             <div class="bio-container" data-aos="fade-up" data-aos-delay="400">
-                <div class="bio-box">
-                    <p class="bio-text">
-                        First-year student at FINKI, Macedonia. Cybersecurity enthusiast with experience in robotics, networking, and programming. I work mostly in Python but enjoy experimenting across different stacks.
+                <div class="bio-box mb-5">
+                    <p class="bio-text mb-0">
+                        First-year student at FINKI, Macedonia, passionate about cybersecurity and building tools that make a difference. I'm diving deep into network reconnaissance, Python development, and ethical hacking. Always learning, always coding, always curious about how systems work (and how to secure them).
                         <span class="cursor-line"></span>
                     </p>
                 </div>
-                <div class="mt-5">
-                    <a href="#projects" class="btn-cmd text-decoration-none">MAIN_PROJECTS</a>
+                
+                <div class="skills-grid mb-5" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-item">
+                        <span class="skill-label">LANGUAGES</span>
+                        <span class="skill-value">Python • C# • PHP • JavaScript</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-label">FOCUS_AREAS</span>
+                        <span class="skill-value">Network Security • Automation • Recon Tools</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-label">CURRENTLY</span>
+                        <span class="skill-value">Learning penetration testing & advanced Python</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal -->
+                <div class="interactive-terminal mb-5" data-aos="fade-up" data-aos-delay="800">
+                    <div class="terminal-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="ms-3 small">interactive_shell.sh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div id="terminal-output"></div>
+                        <div class="terminal-input-line">
+                            <span class="terminal-prompt">visitor@b15cu1t:~$</span>
+                            <input type="text" id="terminal-input" class="terminal-input" placeholder="Try: help" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 mb-5">
+                    <a href="#projects" class="btn-cmd text-decoration-none">VIEW_PROJECTS</a>
                 </div>
             </div>
             
@@ -60,22 +112,98 @@
     </header>
 
     <main class="container pb-5">
-        <section id="projects" class="py-5">
-            <h2 class="h6 fw-bold text-white mb-5" style="letter-spacing: 2px;">// .RUN_MAIN_PROJECTS</h2>
-            <div class="row g-4 mb-5" id="main-projects-row"></div>
-            
-            <h2 class="h6 fw-bold text-secondary mt-5 mb-5" style="letter-spacing: 2px;">// .RUN_LAB_ARCHIVE</h2>
-            <div class="row g-4" id="side-projects-row"></div>
+        <!-- Certification Section -->
+        <section id="certifications" class="py-5 my-5">
+            <h2 class="h6 fw-bold text-white mb-5" style="letter-spacing: 2px;">// .CERTIFICATIONS</h2>
+            <div class="cert-card" data-aos="fade-up">
+                <div class="cert-badge">
+                    <div class="cert-icon">🛡️</div>
+                </div>
+                <div class="cert-details">
+                    <h3 class="h5 fw-bold mb-3">Cyber Exercises and Experiential Education Program (CE3)</h3>
+                    <p class="text-main mb-3">Balkan Hacking CTF Event</p>
+                    <div class="cert-meta">
+                        <span class="cert-tag">SANS</span>
+                        <span class="cert-tag">CRDFGLOBAL</span>
+                        <span class="cert-tag">Kosovo</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contact" class="contact-terminal" data-aos="fade-up">
+        <section id="featured-project" class="py-5 my-5">
+            <h2 class="h6 fw-bold text-white mb-5" style="letter-spacing: 2px;">// .FEATURED_PROJECT</h2>
+            <div class="featured-showcase" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <span class="badge-featured">SPOTLIGHT</span>
+                        <h3 class="h2 fw-bold mt-4 mb-4">Subdomain Enumerator</h3>
+                        <p class="text-main mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                            A Python-based reconnaissance tool for discovering hidden subdomains through wordlist enumeration. Uses threading for parallel requests and automatically logs all discovered endpoints. Perfect for security assessments and bug bounty hunting.
+                        </p>
+                        <div class="feature-list mb-5">
+                            <div class="feature-item">✓ Multi-threaded subdomain checking</div>
+                            <div class="feature-item">✓ Custom wordlist support</div>
+                            <div class="feature-item">✓ Thread-safe result logging</div>
+                            <div class="feature-item">✓ Automatic output file generation</div>
+                        </div>
+                        <a href="https://github.com/B15cu1t/Subdomain_Enumerator" target="_blank" class="btn-cmd">VIEW_ON_GITHUB →</a>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="code-preview">
+                            <div class="code-header">
+                                <span class="code-dot"></span>
+                                <span class="code-dot"></span>
+                                <span class="code-dot"></span>
+                                <span class="ms-3 small">subdomain_enum.py</span>
+                            </div>
+                            <pre class="code-body"><code>$ python subdomain_enum.py
+
+[*] Scanning example.com
+[*] Wordlist: subdomains.txt
+
+[+] Discovered subdomain: https://admin.example.com
+[+] Discovered subdomain: https://dev.example.com
+[+] Discovered subdomain: https://api.example.com
+
+[✓] Results saved to:
+    discovered_subdomains_for_example.com.txt</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-5 my-5">
+            <h2 class="h6 fw-bold text-white mb-5" style="letter-spacing: 2px;">// .SECURITY_TOOLS</h2>
+            <div class="row g-4 mb-5" id="security-projects-row"></div>
+            
+            <h2 class="h6 fw-bold text-white mt-5 mb-5" style="letter-spacing: 2px;">// .AUTOMATION_UTILS</h2>
+            <div class="row g-4 mb-5" id="automation-projects-row"></div>
+            
+            <h2 class="h6 fw-bold text-white mt-5 mb-5" style="letter-spacing: 2px;">// .EXPERIMENTS_LAB</h2>
+            <div class="row g-4 mb-5" id="experiment-projects-row"></div>
+        </section>
+
+        <section id="contact" class="contact-terminal my-5" data-aos="fade-up">
             <h2 class="h6 fw-bold mb-5 text-accent">// .ESTABLISH_UPLINK</h2>
             <form id="contact-form">
                 <div class="row g-4">
-                    <div class="col-md-6"><input type="text" name="name" id="name" class="form-input" placeholder="SOURCE_ID" required></div>
-                    <div class="col-md-6"><input type="email" name="email" id="email" class="form-input" placeholder="REPLY_ADDR" required></div>
-                    <div class="col-12"><textarea name="message" id="message" class="form-input" rows="4" placeholder="TRANSMIT_DATA..." required></textarea></div>
-                    <div class="col-12 text-center mt-4"><button type="submit" class="btn-cmd">SEND_PACKET</button></div>
+                    <div class="col-md-6">
+                        <label for="name" class="form-label-hidden">Name</label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="SOURCE_ID" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label-hidden">Email</label>
+                        <input type="email" name="email" id="email" class="form-input" placeholder="REPLY_ADDR" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="message" class="form-label-hidden">Message</label>
+                        <textarea name="message" id="message" class="form-input" rows="4" placeholder="TRANSMIT_DATA..." required></textarea>
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                        <button type="submit" class="btn-cmd">SEND_PACKET</button>
+                    </div>
                 </div>
             </form>
         </section>
@@ -93,4 +221,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
