@@ -181,7 +181,7 @@ Cybersecurity enthusiast | Python developer | CTF player
 Currently learning: Penetration testing & network security`,
         
         skills: `<span class="text-accent">TECHNICAL SKILLS:</span>
-→ Languages: Python, C#, PHP, JavaScript, Batch
+→ Languages: Python, C#, PHP, Batch, C++
 → Security: Network recon, subdomain enumeration, penetration testing
 → Tools: Git, Linux CLI, threading, automation scripts
 → Currently exploring: Advanced Python, ethical hacking`,
